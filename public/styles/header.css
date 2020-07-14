@@ -1,0 +1,11 @@
+header {
+  height: 400px;
+  background-color:  #c49537;
+  color: #FFFFFF;
+  font-family: Bungee;
+  width: 100vw;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
