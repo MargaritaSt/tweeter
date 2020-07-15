@@ -51,9 +51,7 @@ margin-right: 5%;
   background-color:inherit;
   color:black;
   border: solid grey 3px;
-  padding: 10px;
-  
-  
+  padding: 10px; 
 }
 
 .headers-footers-alignment{
@@ -91,6 +89,7 @@ margin-right: 5%;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif
 }
+
 .tweets-container:hover  .header-hover{
   visibility: visible;
   
