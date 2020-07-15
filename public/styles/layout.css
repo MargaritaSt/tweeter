@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -29,11 +29,13 @@ body {
   font-family: 'Bungee', cursive;
  }
 
- .container {
-  background-color: #f4f1ec;
+.container {
+  background-color: #F4F1EC;
   font-size : 20px;
-  width: 90vw;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
-  align-items: center;
-} 
+  flex-direction: column;
+  width: 90%;
+  margin-left: 7%;
+}
