@@ -1,3 +1,4 @@
+/*section new-tweet*/
 .forButtonAndCounter {
   display: flex;
   justify-content: space-between;
@@ -36,4 +37,29 @@ margin-right: 5%;
 .label {
   display: flex;
   margin-bottom: 10px;
+}
+
+/* section conteiner tweets-container*/
+.tweet-header{
+  background-color: transparent;
+  display:flex;
+  flex-direction: column;
+  padding: 5px;
+  widows: 100%;
+  border-bottom: black solid 2px;
+  align-items: flex-start;
+}
+.article {
+  padding:5px;
+  width:100%;
+  resize:none;
+  background-color:inherit;
+  color:black;
+  padding:10px;
+  border-bottom: black solid 2px;
+ }
+.tweets-container{
+  display:flex;
+  border:black solid 2px;
+  margin:20px;
 }
