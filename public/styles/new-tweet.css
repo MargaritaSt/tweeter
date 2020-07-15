@@ -4,6 +4,7 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 9px;
+  margin-bottom: 50px;
   font-family: Bungee;
 }
 .button {
@@ -40,26 +41,58 @@ margin-right: 5%;
 }
 
 /* section conteiner tweets-container*/
-.tweet-header{
-  background-color: transparent;
-  display:flex;
-  flex-direction: column;
-  padding: 5px;
-  widows: 100%;
-  border-bottom: black solid 2px;
-  align-items: flex-start;
+.tweets-container{
+  width: 100%;
 }
+
 .article {
-  padding:5px;
-  width:100%;
+  width: 100%;
   resize:none;
   background-color:inherit;
   color:black;
-  padding:10px;
-  border-bottom: black solid 2px;
- }
-.tweets-container{
-  display:flex;
-  border:black solid 2px;
-  margin:20px;
+  border: solid grey 3px;
+  padding: 10px;
+  
+  
 }
+
+.headers-footers-alignment{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-footer-format{
+  height: 20px;
+  background-color: transparent;
+  color: grey;
+  display:flex;
+  justify-content: flex-start;
+  margin: 20px;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif
+}
+
+
+.tweets-container:hover{
+  visibility: visible;
+  box-shadow: 10px 10px gray;
+}
+
+.header-hover{
+  height: 20px;
+  background-color: transparent;
+  color: grey;
+  display:flex;
+  justify-content: flex-start;
+  margin: 20px;
+  visibility: hidden;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif
+}
+.tweets-container:hover  .header-hover{
+  visibility: visible;
+  
+}
+
