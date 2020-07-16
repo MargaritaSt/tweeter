@@ -34,18 +34,37 @@ const loadTweets =()=>{
   })
 };
 
+
+//const validate33 = ((data) => data.length >= 1 || data.length > 140);
+
+const validation = ((data) => {
+  let error;
+  let length = data.length - 5;
+  if (length === 0) {
+    alert('Error: Field is empty. Type somthing!');
+  } else if(length > 140) { 
+    alert('Error: Too long. Our arbitary limit of 140 chars!');
+  } else {
+    return false;
+  }
+});
+
+
 $(document).ready(function () {
-  loadTweets();
-  
+  loadTweets(); 
   $('#button').on('click', (evt) => {
   //$('form').on('submit', (evt) => {  //alternative option. whatever event you use. The idea is to catch POST request and pass it to AJAX 
-     // console.log($("#tweet-text").serialize());
       evt.preventDefault();
-      $.post("/tweets", $('#tweet-text').serialize())
-      .then(() =>{
-        $('textarea').val('');
-
-        loadTweets();
-      })
+      const validate = validation($('#tweet-text').serialize());
+      if (validate === false) {
+        $.post("/tweets", $('#tweet-text').serialize())
+        .then(() =>{
+          $('textarea').val('');
+          loadTweets();
+        })
+      }
   });     
 });
+  //.fail(function () {
+     //   alert("Error: Empty field. Type something!");
+    //  })
