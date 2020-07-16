@@ -59,6 +59,16 @@ const data = [
   };
   
   $(document).ready(function () {
-    const $tweet = renderTweets (data);      
+    const $tweet = renderTweets (data); 
+    $('#button').on('click', (evt) => {
+    //$('form').on('submit', (evt) => {  //alternative option. whatever event you use. The idea is to catch POST request and pass it to AJAX 
+        console.log($("#tweet-text").serialize());
+        evt.preventDefault();
+        $.post("/tweets", $('#tweet-text').serialize());
+
+    });     
  });
+
+
+ 
 
