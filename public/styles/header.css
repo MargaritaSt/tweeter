@@ -9,21 +9,7 @@
   justify-content: center;
   flex-direction: column;
   padding-top: 135px;
- 
 }
-
-/*header {
-  height: 5%;
-  background-color:  #c49537;
-  color: #FFFFFF;
-  font-family: Bungee;
-  width: 100vw;
-  display: flex; 
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-}*/
 
 @media (min-width: 1024px) {
   .page-header {
