@@ -25,6 +25,7 @@ const createTweetElement = function(tweet) {
   let $tweet = `
   <article class = "article">
           <div class = "headers-footers-alignment">
+          <img src = "${tweet.user.avatars}">
             <header class = "header-footer-format" style = "align-items: flex-start"> ${tweet.user.name} </header>
             <header class = "header-hover" style = "align-items: flex-end;"> ${tweet.user.handle} </header>
           </div>
@@ -32,8 +33,10 @@ const createTweetElement = function(tweet) {
             <p style = "word-wrap: break-word; margin: 40px; padding-top: 20px;">${escape(tweet.content.text)}</p>
           </div>
           <div class = "headers-footers-alignment" style = "border-top: solid grey 3px;">
-            <footer class = "header-footer-format">${tweet.created_at}</footer>
-            <footer class = "header-footer-format">footer 2</footer>
+            <footer class = "header-footer-format">${(new Date(tweet.created_at)).toDateString()}</footer>
+            <footer class = "header-footer-format">
+            <i class = "fa fa-flag"></i>   
+                     </footer>
         </div>
   </article>
   `
