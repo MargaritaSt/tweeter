@@ -71,7 +71,6 @@ margin-right: 5%;
   font-family: 'Source Sans Pro', sans-serif
 }
 
-
 .tweets-container:hover{
   visibility: visible;
   box-shadow: 10px 10px gray;
@@ -93,4 +92,14 @@ margin-right: 5%;
   visibility: visible;
   
 }
-
+.error-text {
+  color: red;
+  background-color: transparent;
+  border: 2px solid;
+  border-color: transparent;
+  width: 100%;
+  font-size: 16px;
+  padding: 1em;
+  height: 40px;
+  display: none;
+}

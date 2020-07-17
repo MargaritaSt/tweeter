@@ -7,6 +7,12 @@ const renderTweets = function(tweets) {
           //console.log($tweet); // to see what it looks like   
    });
 }
+const renderErrors = function(error) {
+  $('.error-text').text(error);
+  $('.error-text').slideDown("slow");
+  $('.error-text').css("border-color", "red");
+  
+};
 
 const createTweetElement = function(tweet) {
   let $tweet = `
@@ -38,15 +44,14 @@ const loadTweets =()=>{
 //const validate33 = ((data) => data.length >= 1 || data.length > 140);
 
 const validation = ((data) => {
-  let error;
+  let error = '';
   let length = data.length - 5;
   if (length === 0) {
-    alert('Error: Field is empty. Type somthing!');
+    error = 'Error: Field is empty. Type somthing!'; 
   } else if(length > 140) { 
-    alert('Error: Too long. Our arbitary limit of 140 chars!');
-  } else {
-    return false;
-  }
+    error = 'Error: Too long. Our arbitary limit of 140 chars!';
+  } 
+  return error;
 });
 
 
@@ -55,16 +60,30 @@ $(document).ready(function () {
   $('#button').on('click', (evt) => {
   //$('form').on('submit', (evt) => {  //alternative option. whatever event you use. The idea is to catch POST request and pass it to AJAX 
       evt.preventDefault();
+
+      if ($('.error-text').first().is( ":hidden" ) ) {
+        $('.error-text').slideDown( "slow" );
+      } else {
+        $('.error-text').hide();
+      }
+      $('.error-text').css("border-color", "transparent");
+      $('.error-text').text('');
+      $('.error-message').empty();
+
       const validate = validation($('#tweet-text').serialize());
-      if (validate === false) {
+      if (validate === '') {
         $.post("/tweets", $('#tweet-text').serialize())
         .then(() =>{
           $('textarea').val('');
           loadTweets();
         })
+      } else {
+        renderErrors(validate);
       }
   });     
 });
+
+
   //.fail(function () {
      //   alert("Error: Empty field. Type something!");
     //  })
