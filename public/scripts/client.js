@@ -70,6 +70,7 @@ const validation = ((data) => {
 
 $(document).ready(function () {
   loadTweets(); 
+  $('.counter').val(140);
   $('#button').on('click', (evt) => {
   evt.preventDefault();
 
@@ -87,7 +88,7 @@ $(document).ready(function () {
       $.post("/tweets", tweettext.serialize())
       .then(() =>{
         $('textarea').val('');
-        $('.counter').val('');
+        $('.counter').val(140);
         loadTweets();
       })
     } else {
