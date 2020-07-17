@@ -20,6 +20,6 @@ The application uses Media queries for dynamic layouts to perfectly fit whether 
 - md5 2.2.1
 
 ## Screnshots
-!["screenshot of Login Page"](https://github.com/MargaritaSt/tinyapp/blob/master/docs/Login%20page.png?raw=true)
-!["screenshot of URLs Page"](https://github.com/MargaritaSt/tinyapp/blob/master/docs/urls-page.png?raw=true)
-!["screenshot of Create New URL Page"](https://github.com/MargaritaSt/tinyapp/blob/master/docs/Create%20new%20URL.png?raw=true)
+!["screenshot of Desktop Layout"](https://github.com/MargaritaSt/tweeter/blob/master/Docs/DesktopLayout.PNG?raw=true)
+!["screenshot of Mobile Device Layout"](https://github.com/MargaritaSt/tweeter/blob/master/Docs/MobileLayout.PNG?raw=true)
+!["screenshot of TextBox validation"](https://github.com/MargaritaSt/tweeter/blob/master/Docs/DesktopLayout-TextBoxValidation.PNG?raw=true)
