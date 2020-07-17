@@ -14,7 +14,14 @@ const renderErrors = function(error) {
   
 };
 
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const createTweetElement = function(tweet) {
+
   let $tweet = `
   <article class = "article">
           <div class = "headers-footers-alignment">
@@ -22,7 +29,7 @@ const createTweetElement = function(tweet) {
             <header class = "header-hover" style = "align-items: flex-end;"> ${tweet.user.handle} </header>
           </div>
           <div >
-            <p style = "word-wrap: break-word; margin: 40px; padding-top: 20px;">${tweet.content.text}</p>
+            <p style = "word-wrap: break-word; margin: 40px; padding-top: 20px;">${escape(tweet.content.text)}</p>
           </div>
           <div class = "headers-footers-alignment" style = "border-top: solid grey 3px;">
             <footer class = "header-footer-format">${tweet.created_at}</footer>
@@ -40,9 +47,6 @@ const loadTweets =()=>{
   })
 };
 
-
-//const validate33 = ((data) => data.length >= 1 || data.length > 140);
-
 const validation = ((data) => {
   let error = '';
   let length = data.length - 5;
@@ -54,25 +58,23 @@ const validation = ((data) => {
   return error;
 });
 
-
 $(document).ready(function () {
   loadTweets(); 
   $('#button').on('click', (evt) => {
   //$('form').on('submit', (evt) => {  //alternative option. whatever event you use. The idea is to catch POST request and pass it to AJAX 
-      evt.preventDefault();
-      //error validation
-      if ($('.error-text').first().is( ":hidden" ) ) {
-  
-      } else {
+  evt.preventDefault();
+  //error validation
+    if ($('.error-text').first().is( ":hidden" ) ) {
+    } else {
         $('.error-text').hide();
-      }
-      $('.error-text').css("border-color", "transparent");
-      $('.error-text').text('');
-      $('.error-message').empty();
-
-      const validate = validation($('#tweet-text').serialize());
+    }
+    $('.error-text').css("border-color", "transparent");
+    $('.error-text').text('');
+    $('.error-message').empty();
+//Post
+    const validate = validation($('#tweet-text').serialize());
       if (validate === '') {
-        let tweettext = $('#tweet-text')
+        let tweettext = $('#tweet-text') //data
         $.post("/tweets", tweettext.serialize())
         .then(() =>{
           $('textarea').val('');
