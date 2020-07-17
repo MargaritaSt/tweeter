@@ -1,9 +1,10 @@
 //Render tweets to index.html
 const renderTweets = function(tweets) {
   $('#tweets-container').empty();
-   tweets.forEach( (element) => {
-       let $tweet = createTweetElement(element);
-          $('#tweets-container').append($tweet); 
+  let reversedTweets = tweets.reverse();
+   reversedTweets.forEach( (element) => {
+      let $tweet = createTweetElement(element);
+      $('#tweets-container').append($tweet); 
    });
 }
 //render Error message to index.html
