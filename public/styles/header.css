@@ -1,4 +1,4 @@
-header.page-header {
+.page-header {
   height: 5%;
   background-color:  #c49537;
   color: #FFFFFF;
@@ -11,7 +11,7 @@ header.page-header {
   padding-top: 135px;
 }
 
-header {
+/*header {
   height: 5%;
   background-color:  #c49537;
   color: #FFFFFF;
@@ -22,4 +22,11 @@ header {
   justify-content: center;
   flex-direction: column;
 
+}*/
+
+@media (min-width: 1024px) {
+  .page-header {
+    width: 30%;
+    float: left;
+  }
 }

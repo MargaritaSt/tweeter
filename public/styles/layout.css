@@ -30,15 +30,24 @@ body {
   font-family: 'Bungee', cursive;
  }
 
+ 
 .container {
-  background-color: #F4F1EC;
-  font-size : 20px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+    background-color: #F4F1EC;
+    font-size : 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+ }
+
+ @media (min-width: 1024px) {
+  .container {
+    width: 60%;
+    float: right;
+    padding-top: 135px;
+  }
 
 }

@@ -5,6 +5,10 @@ nav {
   padding: 1.5em;
   font-family: 'Bungee', cursive;
   width: 100vw;
-  
+}
 
+@media (min-width: 1024px) {
+  nav{
+    background-color: blue;
+  }
 }

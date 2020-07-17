@@ -60,9 +60,9 @@ $(document).ready(function () {
   $('#button').on('click', (evt) => {
   //$('form').on('submit', (evt) => {  //alternative option. whatever event you use. The idea is to catch POST request and pass it to AJAX 
       evt.preventDefault();
-
+      //error validation
       if ($('.error-text').first().is( ":hidden" ) ) {
-        $('.error-text').slideDown( "slow" );
+  
       } else {
         $('.error-text').hide();
       }
@@ -72,7 +72,8 @@ $(document).ready(function () {
 
       const validate = validation($('#tweet-text').serialize());
       if (validate === '') {
-        $.post("/tweets", $('#tweet-text').serialize())
+        let tweettext = $('#tweet-text')
+        $.post("/tweets", tweettext.serialize())
         .then(() =>{
           $('textarea').val('');
           loadTweets();
